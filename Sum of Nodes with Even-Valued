@@ -1,0 +1,17 @@
+/*
+  using Dfs DEpth First Search
+  using grand parameter storing grandparent value if grandparent value is even adding value to sum variable
+  you can find code for above solution
+*/
+class Solution {
+    int sum=0;
+    void trans(TreeNode root,int parent,int grand){
+        if(grand!=0 && grand%2==0) sum+=root.val;
+        if(root.left!=null) trans(root.left,root.val,parent);
+        if(root.right!=null) trans(root.right,root.val,parent);
+    }
+    public int sumEvenGrandparent(TreeNode root) {
+        trans(root,0,0);
+        return sum;
+    }
+}
