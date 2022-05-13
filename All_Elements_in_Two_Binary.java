@@ -1,3 +1,7 @@
+/*
+Using inorder --> in binary search tree inorder gives sorted elements 
+then storing in list and list2 then merge two list using two pointers
+*/
 class Solution {
     void rec(TreeNode root,List<Integer> list){
         if(root.left!=null) rec(root.left,list);
